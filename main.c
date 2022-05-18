@@ -1,5 +1,4 @@
 #include "table.h"
-#include <vld.h>
 
 char* getstr() {
 	char c, * str = (char*)calloc(1, sizeof(char));
@@ -39,7 +38,7 @@ int do_variant(Table* table, int variant) {
 		if (!info)
 			return -1;
 		switch (insert(table, key, info)) {
-		case -1: 
+		case -1:
 			printf("Overflow\n");
 #ifndef _file
 			free(key);
